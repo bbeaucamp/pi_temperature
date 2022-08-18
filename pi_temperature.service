@@ -1,0 +1,5 @@
+# From https://stackoverflow.com/questions/9619362/running-a-cron-every-30-seconds
+[Unit]
+Description=Log the CPU temperature of the Pi
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/pi_temperature/temperature.py /home/pi/pi_temperature/temperatures.csv

@@ -29,13 +29,13 @@ You can change the frequency of the temperature readings by changing `OnUnitActi
 
 ## Useful Commands
 
-- Disable the logging of temperatures:
+- Disable and stop the logging of temperatures:
 
 ```bash
-sudo systemctl disable pi_temperature.timer
+sudo systemctl disable --now pi_temperature.timer
 ```
 
-- Enable the logging of temperatures:
+- Enable and start the logging of temperatures:
 
 ```bash
 sudo systemctl enable --now pi_temperature.timer
@@ -47,10 +47,10 @@ sudo systemctl enable --now pi_temperature.timer
 sudo systemctl status pi_temperature.timer
 ```
 
-- Watch the latest readings in `temperatures.csv` in real time:
+- Watch the latest readings in `temperatures.csv` in real time (CTRL+C to stop):
 
 ```bash
-tail -f temperatures.csv
+tail -f /home/pi/pi_temperature/temperatures.csv
 ```
 
 - Use the python script without logging to a file. The script will print the temperature to the screen every 2s (useful to monitor the CPU temperature just for a short while):
